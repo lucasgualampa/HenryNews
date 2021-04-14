@@ -24,7 +24,7 @@ public class ApiCallService {
     public ApiWeatherResponse callAPI() throws IOException, InterruptedException {
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://api.weatherapi.com/v1/current.json?key=d7c3b91391394169b1b224909211004&q=Montevideo&aqi=no"))
+                .uri(URI.create("http://api.weatherapi.com/v1/current.json?key=d7c3b91391394169b1b224909211004&q=Paris&aqi=no"))
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
@@ -49,7 +49,7 @@ public class ApiCallService {
     public OpenWeatherResponse callAPI2() throws IOException, InterruptedException {
 
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("http://api.openweathermap.org/data/2.5/weather?q=montevideo&appid=4ae2636d8dfbdc3044bede63951a019b"))
+                .uri(URI.create("http://api.openweathermap.org/data/2.5/weather?q=Paris&appid=4ae2636d8dfbdc3044bede63951a019b"))
                 .method("GET", HttpRequest.BodyPublishers.noBody())
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
