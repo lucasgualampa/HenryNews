@@ -34,7 +34,7 @@ public class ApiCallService {
 
         System.out.println(apiWeatherResponse);
         if(RandomUtils.nextBoolean()){
-            throw new IOException("Probando Circuit Breaker...");
+            throw new IOException("Testing Circuit Breaker...");
         }
 
         return apiWeatherResponse;
@@ -58,7 +58,7 @@ public class ApiCallService {
         final OpenWeatherResponse openWeatherResponse = new Gson().fromJson(response.body(), OpenWeatherResponse.class);
 
         if(RandomUtils.nextBoolean()){
-            throw new IOException("Probando Circuit Breaker...");
+            throw new IOException("Testing Circuit Breaker...");
         }
 
         System.out.println(openWeatherResponse);
@@ -67,12 +67,12 @@ public class ApiCallService {
     }
 
     private OpenWeatherResponse fallback2(final Throwable t){
-        log.error(t.getStackTrace().toString()); //todo el error
+        log.error(t.getStackTrace().toString()); //log all error
         Main main = new Main(0d,0d,0d,0d,0,0);
         return OpenWeatherResponse
                 .builder()
                 .main(main)
-                .name("cayeron ambas Api's")
+                .name("both Apis are down!")
                 .build();
     }
 

@@ -25,7 +25,7 @@ public class WriterService {
         return writerRepository.findById(id).orElseThrow(() -> new HttpClientErrorException(HttpStatus.NOT_FOUND));
     }
 
-    // set a writer
+    // add a writer
     public Writer addWriter(Writer writer){
         return writerRepository.save(writer);
     }

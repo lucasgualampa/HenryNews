@@ -18,7 +18,7 @@ public class WriterListToWriterDTOListConverter implements Converter<List<Writer
 
     private final ModelMapper modelMapper;
 
-    public WriterListToWriterDTOListConverter(ModelMapper modelMapper) {
+    public WriterListToWriterDTOListConverter(final ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
     }
 

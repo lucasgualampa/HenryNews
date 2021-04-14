@@ -18,7 +18,7 @@ import java.io.Serializable;
         @JsonSubTypes.Type(value = ImageNews.class, name = "IMAGES"),
         @JsonSubTypes.Type(value = TextNews.class, name = "TEXT"),
 })
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // a table per class for each entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // a table per class "for each entity"
 public abstract class News implements Serializable {
 
     @Id

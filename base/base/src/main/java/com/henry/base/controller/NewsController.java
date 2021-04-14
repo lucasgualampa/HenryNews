@@ -25,7 +25,7 @@ public class NewsController {
     @Operation(summary = "add a writer to a new")
     private String addWriter(@PathVariable Integer id, @PathVariable Integer writerID){
         newsService.addWriter(id, writerID);
-        return ("Add a writer by id: " + writerID);
+        return ("Added a writer by id: " + writerID);
     }
 
     @GetMapping
@@ -35,7 +35,7 @@ public class NewsController {
         return newsService.getAll(page,size);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     @Operation(summary = "Delete a new by id")
     public String deleteNew(@PathVariable Integer id){
         newsService.deleteWriterById(id);
