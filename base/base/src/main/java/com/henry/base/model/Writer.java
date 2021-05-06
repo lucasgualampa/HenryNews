@@ -15,6 +15,5 @@ public class Writer {
     private Integer id;
 
     @NotNull
-    private String name, dni;
-    private String surname;
+    private String name, dni, surname;
 }
